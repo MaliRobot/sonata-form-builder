@@ -49,7 +49,7 @@ Insert the follow line on your AppKernel.php in your symfony :
                 // ...
 
                  new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
-                 new Malirobot\FormBuilderBundle\PirastruFormBuilderBundle()
+                 new Malirobot\FormBuilderBundle\MaliRobotFormBuilderBundle()
             );
 
             // ...

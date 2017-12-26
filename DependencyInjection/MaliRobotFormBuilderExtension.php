@@ -26,6 +26,6 @@ class MalirobotFormBuilderExtension extends Extension
         $loader->load('services.yml');
         $loader->load('twig.yml');
 
-        $container->setParameter('pirastru_formbuilder.params', $config);
+        $container->setParameter('malirobot_formbuilder.params', $config);
     }
 }

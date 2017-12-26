@@ -87,7 +87,7 @@ class FormBuilderController extends Controller
         $submits = $formBuilder->getSubmit();
         $formBuilder->setColumns($columns);
 
-        if ($this->getParameter('pirastru_form_builder.save_data')) {
+        if ($this->getParameter('malirobot_form_builder.save_data')) {
             /* append the new submit on tail of the previous Submits JSON */
             $submits[] = $form_submit['form'];
             $formBuilder->setSubmit($submits);

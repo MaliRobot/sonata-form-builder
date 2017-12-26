@@ -65,7 +65,7 @@ class FormBuilderBlockService extends BaseBlockService
     public function getFormBuilderAdmin()
     {
         if (!$this->formBuilderAdmin) {
-            $this->formBuilderAdmin = $this->container->get('pirastru_form_builder.admin');
+            $this->formBuilderAdmin = $this->container->get('malirobot_form_builder.admin');
         }
 
         return $this->formBuilderAdmin;

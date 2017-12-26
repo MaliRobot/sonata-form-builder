@@ -1,5 +1,5 @@
 require.config({
-  baseUrl: "/bundles/pirastruformbuilder/BootstrapFormBuilder/assets/js/lib/",
+  baseUrl: "/bundles/malirobotformbuilder/BootstrapFormBuilder/assets/js/lib/",
   shim: {
       'underscore': {
             exports: '_'
