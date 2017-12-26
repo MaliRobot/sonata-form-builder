@@ -1,6 +1,6 @@
 <?php
 
-namespace Pirastru\FormBuilderBundle\Controller;
+namespace Malirobot\FormBuilderBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController;
 

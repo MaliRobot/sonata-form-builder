@@ -16,7 +16,7 @@ You need Bootstrap v3 and Jquery on your Javascript/CSS requirements and a recen
 
 ###Step 1: Download the bundle
  
-You can download and put on your /src directory (like this  src/Pirastru/FormBuilderBundle)
+You can download and put on your /src directory (like this  src/Malirobot/FormBuilderBundle)
 or insert on your vendor directory with the follow command :
 
 ```sh
@@ -49,7 +49,7 @@ Insert the follow line on your AppKernel.php in your symfony :
                 // ...
 
                  new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
-                 new Pirastru\FormBuilderBundle\PirastruFormBuilderBundle()
+                 new Malirobot\FormBuilderBundle\PirastruFormBuilderBundle()
             );
 
             // ...
@@ -93,7 +93,7 @@ Append the following code to app/config/routing.yml or better to separate app/co
 ```yml
 
 sonata_form_builder:
-    resource: '@PirastruFormBuilderBundle/Controller/FormBuilderController.php'
+    resource: '@MalirobotFormBuilderBundle/Controller/FormBuilderController.php'
     type:     annotation
 
 ```
@@ -113,7 +113,7 @@ sonata_admin:
             sonata.admin.group.formbuilder:
                 label: Form Builder
                 items:
-                    - pirastru_form_builder.admin
+                    - malirobot_form_builder.admin
 
 ```
 
@@ -127,7 +127,7 @@ sonata_block:
     ....
     blocks:
         ....
-        pirastru_form_builder.block:
+        malirobot_form_builder.block:
 
 ```
 

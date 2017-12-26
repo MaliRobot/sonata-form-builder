@@ -1,6 +1,6 @@
 <?php
 
-namespace Pirastru\FormBuilderBundle\Admin;
+namespace Malirobot\FormBuilderBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -98,7 +98,7 @@ class FormBuilderAdmin extends Admin
     {
         switch ($name) {
             case 'edit':
-                return 'PirastruFormBuilderBundle:CRUD:formbuilder.html.twig';
+                return 'MalirobotFormBuilderBundle:CRUD:formbuilder.html.twig';
                 break;
             default:
                 return parent::getTemplate($name);
@@ -114,7 +114,7 @@ class FormBuilderAdmin extends Admin
         $showMapper
             ->add('name')
             ->add('recipient')
-            ->add('submit', null, array('template' => 'PirastruFormBuilderBundle:CRUD:table_show_field.html.twig'))
+            ->add('submit', null, array('template' => 'MalirobotFormBuilderBundle:CRUD:table_show_field.html.twig'))
         ;
     }
 

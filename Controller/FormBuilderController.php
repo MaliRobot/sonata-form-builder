@@ -1,9 +1,9 @@
 <?php
 
-namespace Pirastru\FormBuilderBundle\Controller;
+namespace Malirobot\FormBuilderBundle\Controller;
 
-use Pirastru\FormBuilderBundle\Event\MailEvent;
-use Pirastru\FormBuilderBundle\FormFactory\FormBuilderFactory;
+use Malirobot\FormBuilderBundle\Event\MailEvent;
+use Malirobot\FormBuilderBundle\FormFactory\FormBuilderFactory;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -37,7 +37,7 @@ class FormBuilderController extends Controller
      */
     public function exportSubmitAction($id, $format)
     {
-        $formBuilder = $this->getDoctrine()->getRepository('PirastruFormBuilderBundle:FormBuilder')
+        $formBuilder = $this->getDoctrine()->getRepository('MalirobotFormBuilderBundle:FormBuilder')
             ->find($id);
 
         $json_object = $formBuilder->getSubmit();
@@ -152,7 +152,7 @@ class FormBuilderController extends Controller
                 }
             }
 
-            $html = $this->renderView('PirastruFormBuilderBundle:Mail:resume.html.twig', [
+            $html = $this->renderView('MalirobotFormBuilderBundle:Mail:resume.html.twig', [
                 'data' => $data,
                 'name' => $formBuilder->getName()
             ]);
@@ -161,7 +161,7 @@ class FormBuilderController extends Controller
 
             $dispatcher = $this->get('event_dispatcher');
             $event = new MailEvent($message, $data);
-            $dispatcher->dispatch('pirastru.formbuilder.event.mail', $event);
+            $dispatcher->dispatch('malirobot.formbuilder.event.mail', $event);
 
             $this->get('mailer')->send($event->getMessage());
         }

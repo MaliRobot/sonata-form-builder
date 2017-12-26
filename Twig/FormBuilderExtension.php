@@ -1,6 +1,6 @@
 <?php
 
-namespace Pirastru\FormBuilderBundle\Twig;
+namespace Malirobot\FormBuilderBundle\Twig;
 
 use Sonata\AdminBundle\Admin\FieldDescriptionInterface;
 

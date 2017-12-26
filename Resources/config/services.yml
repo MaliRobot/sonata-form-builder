@@ -1,23 +1,23 @@
 parameters:
-    pirastru_form_builder.label: "Form Builder Drag&Drop"
-    pirastru_form_builder.save_data: true
+    malirobot_form_builder.label: "Form Builder Drag&Drop"
+    malirobot_form_builder.save_data: true
 services:
-    pirastru_form_builder.admin:
-        class: Pirastru\FormBuilderBundle\Admin\FormBuilderAdmin
-        arguments: [~, Pirastru\FormBuilderBundle\Entity\FormBuilder, PirastruFormBuilderBundle:FormBuilderAdmin, "@service_container"]
+    malirobot_form_builder.admin:
+        class: Malirobot\FormBuilderBundle\Admin\FormBuilderAdmin
+        arguments: [~, Malirobot\FormBuilderBundle\Entity\FormBuilder, MalirobotFormBuilderBundle:FormBuilderAdmin, "@service_container"]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: Form, label: "%pirastru_form_builder.label%" }
+            - {name: sonata.admin, manager_type: orm, group: Form, label: "%malirobot_form_builder.label%" }
 
-    pirastru_form_builder.block:
-        class: Pirastru\FormBuilderBundle\Block\FormBuilderBlockService
+    malirobot_form_builder.block:
+        class: Malirobot\FormBuilderBundle\Block\FormBuilderBlockService
         arguments:
-            - "pirastru_form_builder.block"
+            - "malirobot_form_builder.block"
             - "@templating"
             - "@service_container"
         tags:
             - {name: "sonata.block"}
 
-    pirastru_form_builder.controller:
-        class: Pirastru\FormBuilderBundle\Controller\FormBuilderController
+    malirobot_form_builder.controller:
+        class: Malirobot\FormBuilderBundle\Controller\FormBuilderController
         calls:
             - [setContainer, [@service_container]]

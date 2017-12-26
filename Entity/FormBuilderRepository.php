@@ -1,6 +1,6 @@
 <?php
 
-namespace Pirastru\FormBuilderBundle\Entity;
+namespace Malirobot\FormBuilderBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 

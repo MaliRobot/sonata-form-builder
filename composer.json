@@ -22,6 +22,6 @@
         "gregwar/captcha-bundle": "^2.0"
     },
     "autoload": {
-        "psr-4": { "Pirastru\\FormBuilderBundle\\": "" }
+        "psr-4": { "Malirobot\\FormBuilderBundle\\": "" }
     }
 }

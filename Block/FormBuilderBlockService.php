@@ -5,7 +5,7 @@
  * Time: 17:28.
  */
 
-namespace Pirastru\FormBuilderBundle\Block;
+namespace Malirobot\FormBuilderBundle\Block;
 
 use Sonata\BlockBundle\Block\BlockContextInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -42,7 +42,7 @@ class FormBuilderBlockService extends BaseBlockService
     public function configureSettings(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'template' => 'PirastruFormBuilderBundle:Block:block_form_builder.html.twig',
+            'template' => 'MalirobotFormBuilderBundle:Block:block_form_builder.html.twig',
             'formBuilderId' => null,
         ));
     }
@@ -110,7 +110,7 @@ class FormBuilderBlockService extends BaseBlockService
     {
         $formBuilderId = $blockContext->getBlock()->getSetting('formBuilderId');
         $formBuilder = $this->container->get('doctrine')
-            ->getRepository('PirastruFormBuilderBundle:FormBuilder')
+            ->getRepository('MalirobotFormBuilderBundle:FormBuilder')
             ->findOneBy(array('id' => $formBuilderId));
 
         // In case the FormBuilder Object is not defined
@@ -119,7 +119,7 @@ class FormBuilderBlockService extends BaseBlockService
             return $this->renderResponse($blockContext->getTemplate(), array(), $response);
         }
 
-        $form_pack = $this->container->get('pirastru_form_builder.controller')
+        $form_pack = $this->container->get('malirobot_form_builder.controller')
             ->generateFormFromFormBuilder($formBuilder);
 
         $form = $form_pack['form'];
@@ -133,7 +133,7 @@ class FormBuilderBlockService extends BaseBlockService
              ***************************************/
             $this->preUpdate($blockContext->getBlock());
 
-            $this->container->get('pirastru_form_builder.controller')
+            $this->container->get('malirobot_form_builder.controller')
                 ->submitOperations($formBuilder, $form_pack['title_col']);
 
             $success = true;
@@ -159,7 +159,7 @@ class FormBuilderBlockService extends BaseBlockService
 
         if ($formBuilderId) {
             $formBuilderId = $this->container->get('doctrine')
-                ->getRepository('PirastruFormBuilderBundle:FormBuilder')
+                ->getRepository('MalirobotFormBuilderBundle:FormBuilder')
                 ->findOneBy(array('id' => $formBuilderId));
         }
 

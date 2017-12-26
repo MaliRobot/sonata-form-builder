@@ -5,7 +5,7 @@
  * Time: 12:27.
  */
 
-namespace Pirastru\FormBuilderBundle\FormFactory;
+namespace Malirobot\FormBuilderBundle\FormFactory;
 
 use Gregwar\CaptchaBundle\Type\CaptchaType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;

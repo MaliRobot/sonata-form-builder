@@ -1,6 +1,6 @@
 <?php
 
-namespace Pirastru\FormBuilderBundle\Entity;
+namespace Malirobot\FormBuilderBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Form Builder Entity.
  *
  * @ORM\Table(name="form__builder")
- * @ORM\Entity(repositoryClass="Pirastru\FormBuilderBundle\Entity\FormBuilderRepository")
+ * @ORM\Entity(repositoryClass="Malirobot\FormBuilderBundle\Entity\FormBuilderRepository")
  */
 class FormBuilder
 {
@@ -206,7 +206,7 @@ class FormBuilder
     }
 
     /**
-     * @param \Pirastru\FormBuilderBundle\Entity\json $json
+     * @param \Malirobot\FormBuilderBundle\Entity\json $json
      */
     public function setJson($json)
     {
@@ -214,7 +214,7 @@ class FormBuilder
     }
 
     /**
-     * @return \Pirastru\FormBuilderBundle\Entity\json
+     * @return \Malirobot\FormBuilderBundle\Entity\json
      */
     public function getJson()
     {

@@ -1,5 +1,5 @@
 <?php
-namespace Pirastru\FormBuilderBundle\Event;
+namespace Malirobot\FormBuilderBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
