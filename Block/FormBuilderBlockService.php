@@ -74,7 +74,7 @@ class FormBuilderBlockService extends BaseBlockService
     /**
      * @param \Sonata\AdminBundle\Form\FormMapper $formMapper
      *
-     * @return \Symfony\Component\Form\FormBuilder
+     * @return mixed
      */
     protected function getFieldFormBuilder(FormMapper $formMapper)
     {

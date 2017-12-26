@@ -142,8 +142,13 @@ class FormBuilderFactory
         $formBuilder->add('choice_'.$key, 'choice', array(
             'label' => $elem->fields->label->value,
             'choices' => $elem->fields->options->value,
+            'expanded' => true,
+            'multiple' => false,
             'required' => false,
             'empty_value' => false,
+            'attr' => array(
+                'class' => 'choice '
+            )
         ));
 
         return array('name' => 'choice_'.$key, 'size' => $this->getSelectedValue($elem->fields->inputsize->value));
@@ -159,6 +164,9 @@ class FormBuilderFactory
             'choices' => $elem->fields->options->value,
             'multiple' => true,
             'required' => false,
+            'attr' => array(
+                'class' => 'choice '
+            )
         ));
 
         return array('name' => 'choice_'.$key, 'size' => $this->getSelectedValue($elem->fields->inputsize->value));
@@ -176,6 +184,9 @@ class FormBuilderFactory
             'empty_value' => false,
             'required' => false,
             'expanded' => true,
+            'attr' => array(
+                'class' => 'choice '
+            )
         ));
 
         return array('name' => 'radio_'.$key, 'size' => 'col-sm-6');
@@ -192,6 +203,9 @@ class FormBuilderFactory
             'multiple' => true,
             'expanded' => true,
             'required' => false,
+            'attr' => array(
+                'class' => 'choice '
+            )
         ));
 
         return array('name' => 'checkbox_'.$key, 'size' => 'col-sm-6');
@@ -260,7 +274,9 @@ class FormBuilderFactory
 
         $formBuilder->add('button_'.$key, $buttonType, array(
             'label' => $value,
-            'attr' => ['class' => 'btn btn-primary is-txt-uppercase is-txt-center']
+            'attr' => array(
+                'class' => 'btn btn-primary is-txt-uppercase is-txt-center'
+            )
         ));
     }
 
@@ -285,6 +301,9 @@ class FormBuilderFactory
             'label_attr' => [
                 'style' => 'display:none;',
             ],
+            'attr' => array(
+                'class' => 'captcha '
+            )
 //            'help_block' => $elem->fields->helptext->value,
         ));
 

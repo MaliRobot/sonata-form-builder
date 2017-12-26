@@ -14,7 +14,66 @@
                     <div class="col-md-12">
                         <form method="POST" class="form-horizontal" {{ form_enctype(form) }}>
                             <fieldset>
-                                {{ form_widget(form) }}
+                                {% for child in form.children %}
+                                    {% if child.vars.label != null %}
+                                        {{ form_label(child) }}
+                                    {% endif %}
+                                    {% if child.vars.label != null %}
+                                        {{ form_label(child) }}
+                                    {% endif %}
+                                    {% if 'choice ' in child.vars.attr %}
+
+                                        {{ form_widget(child) }}
+
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-12" style="display: flex;">
+
+                                                    {% for choice in child.vars.choices %}
+                                                        {#{{ dump(choice) }}#}
+                                                        {% set index = choice.value %}
+                                                        {% set entity = choice.data %}
+                                                        <div class="date-select" value="{{ loop.index }}">{{ choice.label }}</div>
+                                                    {% endfor %}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        {# TODO - move this block to front end files #}
+                                        <style>
+                                            .date-select {
+                                                width: 20%;
+                                                padding: 20px 40px;
+                                                background-color: #e5e5e5;
+                                                margin-bottom: 25px;
+                                                border-right: 1px solid #ccc;
+                                                cursor: pointer;
+                                                color: #797a7d;
+                                                text-align: center;
+                                            }
+
+                                            .date-select.active {
+                                                background-color: #003b71;
+                                                color: #fff;
+                                            }
+                                        </style>
+                                        <script>
+                                            // TODO move to js files
+                                            $('.date-select').click(function(){
+                                                var selected  = $(this).attr('value');
+                                                console.log(selected);
+                                                if (selected !== undefined) {
+                                                    $('input[value=' + selected + ']').prop('checked', true);
+                                                }
+                                            });
+                                        </script>
+                                        {# end TODO #}
+
+                                    {% else %}
+                                        {{ form_widget(child) }}
+                                    {% endif %}
+                                {% endfor %}
                             </fieldset>
                             <input type="hidden" name="formId" class="form-num " value="{{ formBuilderId }}">
                         </form>
