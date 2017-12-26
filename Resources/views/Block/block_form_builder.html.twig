@@ -30,17 +30,15 @@
                                                 <div class="col-md-12" style="display: flex;">
 
                                                     {% for choice in child.vars.choices %}
-                                                        {#{{ dump(choice) }}#}
-                                                        {% set index = choice.value %}
                                                         {% set entity = choice.data %}
-                                                        <div class="date-select" value="{{ loop.index }}">{{ choice.label }}</div>
+                                                        <div class="date-select" value="{{ choice.value }}">{{ choice.label }}</div>
                                                     {% endfor %}
 
                                                 </div>
                                             </div>
                                         </div>
-                                        
-                                        {# TODO - move this block to front end files #}
+
+                                        {# TODO - move this block to stylesheets #}
                                         <style>
                                             .date-select {
                                                 width: 20%;
@@ -58,16 +56,6 @@
                                                 color: #fff;
                                             }
                                         </style>
-                                        <script>
-                                            // TODO move to js files
-                                            $('.date-select').click(function(){
-                                                var selected  = $(this).attr('value');
-                                                console.log(selected);
-                                                if (selected !== undefined) {
-                                                    $('input[value=' + selected + ']').prop('checked', true);
-                                                }
-                                            });
-                                        </script>
                                         {# end TODO #}
 
                                     {% else %}
@@ -88,6 +76,14 @@
                 $( function() {
                     $( ".js-datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
                 } );
+
+                $('.date-select').click(function(){
+                    var selected  = $(this).attr('value');
+                    console.log(selected);
+                    if (selected !== undefined) {
+                        $('input[value=' + selected + ']').prop('checked', true);
+                    }
+                });
             </script>
         {% endif %}
     {% else %}
