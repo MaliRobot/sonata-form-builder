@@ -28,7 +28,7 @@ class FormBuilderFactory
         $formBuilder->add('email_'.$key, 'email', array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+//            'help_block' => $elem->fields->helptext->value,
             'attr' => array(
                 'placeholder' => $elem->fields->placeholder->value,
             ),
@@ -48,7 +48,7 @@ class FormBuilderFactory
         $formBuilder->add('date_'.$key, 'text', array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_label' => $elem->fields->helptext->value,
+//            'help_label' => $elem->fields->helptext->value,
             'attr' => array(
                 'class' => 'date js-datepicker',
                 'placeholder' => $elem->fields->placeholder->value,
@@ -72,7 +72,7 @@ class FormBuilderFactory
         $formBuilder->add('telephone_'.$key, 'number', array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+//            'help_block' => $elem->fields->helptext->value,
             'attr' => array(
                 'class' => 'telephone ',
                 'placeholder' => $elem->fields->placeholder->value,
@@ -90,7 +90,7 @@ class FormBuilderFactory
         $formBuilder->add('postalcode_'.$key, 'number', array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+//            'help_block' => $elem->fields->helptext->value,
             'attr' => array(
                 'class' => 'postalcode ',
                 'placeholder' => $elem->fields->placeholder->value,
@@ -108,7 +108,7 @@ class FormBuilderFactory
         $formBuilder->add('text_'.$key, 'text', array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+//            'help_block' => $elem->fields->helptext->value,
             'attr' => array(
                 'placeholder' => $elem->fields->placeholder->value,
             ),
@@ -125,7 +125,7 @@ class FormBuilderFactory
         $formBuilder->add('textarea_'.$key, 'textarea', array(
             'required' => false,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+//            'help_block' => $elem->fields->helptext->value,
             'attr' => array(
                 'placeholder' => $elem->fields->textarea->value,
             ),
@@ -284,7 +284,7 @@ class FormBuilderFactory
             'label_attr' => [
                 'style' => 'display:none;',
             ],
-            'help_block' => $elem->fields->helptext->value,
+//            'help_block' => $elem->fields->helptext->value,
         ));
 
         return array('name' => 'captcha_'.$key, 'size' => 'col-sm-6');
