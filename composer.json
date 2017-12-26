@@ -1,15 +1,20 @@
 {
-    "name": "pirasterize/sonata-form-builder",
+    "name": "malirobot/sonata-form-builder",
     "type": "symfony-bundle",
-    "description": "A drag&drod form builder for sonata admin",
+    "description": "A drag&drop form builder for sonata admin",
     "keywords": ["drag","drop","form","builder","Symfony2", "sonata","admin","project"],
-    "homepage": "https://github.com/pirasterize/sonata-form-builder",
+    "homepage": "https://github.com/MaliRobot/sonata-form-builder",
     "license": "MIT",
     "authors": [
         {
             "name": "Andrea Pirastru",
             "email": "pirasterize@gmail.com",
-            "role": "Artist"
+            "role": "Original Author"
+        },
+        {
+            "name": "Miloš Trifunović",
+            "email": "milos.trifunovic@gmail.com",
+            "role": "Adaptation"
         }
     ],
     "require": {

@@ -260,6 +260,7 @@ class FormBuilderFactory
 
         $formBuilder->add('button_'.$key, $buttonType, array(
             'label' => $value,
+            'attr' => ['class' => 'btn btn-primary is-txt-uppercase is-txt-center']
         ));
     }
 

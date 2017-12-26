@@ -1,2 +1,5 @@
 /vendor
 composer.lock
+.DS_Store
+Resources/.DS_Store
+Resources/views/.DS_Store
