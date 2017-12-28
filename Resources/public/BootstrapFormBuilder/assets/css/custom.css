@@ -111,3 +111,19 @@ form .popover form {
  width: 100%;
  overflow: hidden;
 }
+
+.date-select {
+  width: 20%;
+  padding: 20px 40px;
+  background-color: #e5e5e5;
+  margin-bottom: 25px;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+  color: #797a7d;
+  text-align: center;
+}
+
+.date-select.active {
+  background-color: #003b71;
+  color: #fff;
+}
