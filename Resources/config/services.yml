@@ -20,4 +20,4 @@ services:
     malirobot_form_builder.controller:
         class: Malirobot\FormBuilderBundle\Controller\FormBuilderController
         calls:
-            - [setContainer, [@service_container]]
+            - [setContainer, ["@service_container"]]

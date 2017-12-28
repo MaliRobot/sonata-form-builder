@@ -10,7 +10,7 @@
 
     <table class="table table-bordered">
 
-        {% set form_array = json_decode(object.json) %}
+        {% set form_array = object.json | json_encode %}
 
             <tr>
                 {% for key,value in object.columns if key|slice(0, 6) != 'button' %}
@@ -30,8 +30,8 @@
                             </td>
                         {% elseif key|slice(0, 6) == 'choice' %}
                             <td>
-                                {% if submit_line[key] is defined %}
-                                    {% if is_array(submit_line[key]) %}
+                                {% if submit_line[key].count > 1 %}
+                                    {% if submit_line[key].count > 1 %}
                                         <ul>
                                         {% for v in submit_line[key] %}
                                             <li>{{ form_array[el_k[1]].fields.options.value[v] }}</li>
@@ -48,7 +48,7 @@
                             <td>
 
                                 {% if submit_line[key] is defined %}
-                                    {% if is_array(submit_line[key]) %}
+                                    {% if submit_line[key].count > 1 %}
                                         <ul>
                                         {% for v in submit_line[key] %}
                                             <li>{{ form_array[el_k[1]].fields.checkboxes.value[v] }}</li>
